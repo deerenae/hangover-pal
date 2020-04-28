@@ -4,7 +4,7 @@ import HangoverCard from './HangoverCard'
 export default function HangoverContainer(props){
 
     const renderHangovers = props.hangovers.map(hangover =>{
-        return <HangoverCard hangover={hangover} />
+        return <HangoverCard hangover={hangover} handleToggle={props.handleToggle}/>
     })
 
     return(

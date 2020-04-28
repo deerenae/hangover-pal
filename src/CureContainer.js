@@ -1,9 +1,16 @@
 import React from 'react'
-
+import CureCard from './CureCard'
 export default function CureContainer(props){
-    console.log(props.cures)
+
+    const renderCures = props.cures.map(cure =>{
+        return <CureCard cure={cure}/>
+    })
+    
     return (
-        <h1>cures</h1>
+        <div className='cure-container'>
+        <h1>Remedies</h1>
+        {renderCures}
+        </div>
         
     )
 }

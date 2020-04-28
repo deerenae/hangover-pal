@@ -8,7 +8,8 @@ class App extends Component {
 
   state = {
     hangovers: [],
-    cures: []
+    cures: [],
+    toggleShow: true
   }
 
   componentDidMount(){
@@ -19,16 +20,19 @@ class App extends Component {
       fetch('http://localhost:3000/cures')
       .then(response => response.json())
       .then(cures => this.setState({cures})) 
-      
-      
   }
 
+  handleToggle = () => {
+    return this.setState({toggleShow: false})
+  }
 
   render(){
     return (
       <div className="App">
-        <HangoverContainer hangovers={this.state.hangovers}/>
-        <CureContainer cures={this.state.cures} />
+        {this.state.toggleShow== true 
+        ?<HangoverContainer hangovers={this.state.hangovers} handleToggle={this.handleToggle} />
+        :<CureContainer cures={this.state.cures} />
+        } 
         
         
       </div>
