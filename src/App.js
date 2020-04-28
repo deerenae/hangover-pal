@@ -29,11 +29,21 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        {this.state.toggleShow== true 
-        ?<HangoverContainer hangovers={this.state.hangovers} handleToggle={this.handleToggle} />
-        :<CureContainer cures={this.state.cures} />
-        } 
+        <header className='App-header'>HangoverPal</header>
+        {this.state.toggleShow 
         
+        ?(
+        <>
+         <h1>How hungover are you?</h1>
+          <HangoverContainer hangovers={this.state.hangovers} handleToggle={this.handleToggle} />
+          </>)
+        :
+        (<>
+          <h1>Remedies</h1>
+        <CureContainer cures={this.state.cures} /> 
+        </>)
+        } 
+      
         
       </div>
   );

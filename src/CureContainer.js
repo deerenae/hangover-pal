@@ -8,7 +8,6 @@ export default function CureContainer(props){
     
     return (
         <div className='cure-container'>
-        <h1>Remedies</h1>
         {renderCures}
         </div>
         

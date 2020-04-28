@@ -8,9 +8,9 @@ export default function HangoverContainer(props){
     })
 
     return(
-        <>
-        <h1>Hangovers</h1>
-        {renderHangovers}
-        </>
+        <div className='hangover-container'>
+           
+            {renderHangovers}
+        </div>
     )
 }
